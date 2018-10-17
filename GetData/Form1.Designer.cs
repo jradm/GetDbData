@@ -1,4 +1,6 @@
-﻿namespace GetData
+﻿using System;
+
+namespace GetData
 {
     partial class FormLogin
     {
@@ -37,6 +39,8 @@
             this.labelConnection = new System.Windows.Forms.Label();
             this.textBoxConnection = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.comboBoxSelectDB = new System.Windows.Forms.ComboBox();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonConnect
@@ -114,11 +118,35 @@
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxPassword.TabIndex = 9;
             // 
+            // comboBoxSelectDB
+            // 
+            this.comboBoxSelectDB.FormattingEnabled = true;
+            this.comboBoxSelectDB.Items.AddRange(new object[] {
+            "SQL DB",
+            "MySQL DB"});
+            this.comboBoxSelectDB.Location = new System.Drawing.Point(588, 19);
+            this.comboBoxSelectDB.Name = "comboBoxSelectDB";
+            this.comboBoxSelectDB.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSelectDB.TabIndex = 10;
+            this.comboBoxSelectDB.Text = "Select your DB";
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.Location = new System.Drawing.Point(394, 214);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(75, 23);
+            this.buttonShow.TabIndex = 11;
+            this.buttonShow.Text = "Show";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonShow);
+            this.Controls.Add(this.comboBoxSelectDB);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxConnection);
             this.Controls.Add(this.labelConnection);
@@ -146,6 +174,10 @@
         private System.Windows.Forms.Label labelConnection;
         private System.Windows.Forms.TextBox textBoxConnection;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.ComboBox comboBoxSelectDB;
+        private System.Windows.Forms.Button buttonShow;
+
+        public EventHandler comboBoxSelectDB_SelectedIndexChanged { get; private set; }
     }
 }
 
